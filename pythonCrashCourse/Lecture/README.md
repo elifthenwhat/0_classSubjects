@@ -1,142 +1,136 @@
-# Python Learning Notes
+# Python Crash Course Notes
 
-## Introduction
-Hello, this is my lecture notes from *Python Crash Course*.  
+Hello, this is my lecture notes from Python Crash Course.  
 The goal of these notes is to:  
-- Store key information in one place  
-- Provide quick reference for Python concepts  
-- Include examples and testing practices  
-- Serve as a study and revision tool  
+- Have information stored for reference  
+- Quickly find Python concepts  
+- Help with exercises and review
 
 ## Table of Contents
-* [Chapter 2: Variables and Simple Data Types](#chapter-2-variables-and-simple-data-types)
-* [Chapter 3: Introducing Lists](#chapter-3-introducing-lists)
-* [Chapter 4: Working with Lists](#chapter-4-working-with-lists)
-* [Chapter 5: If Statements](#chapter-5-if-statements)
-* [Chapter 6: Dictionaries](#chapter-6-dictionaries)
-* [Chapter 7: User Input and While Loops](#chapter-7-user-input-and-while-loops)
-* [Chapter 8: Functions](#chapter-8-functions)
-* [Chapter 9: Classes](#chapter-9-classes)
-* [Chapter 10: Files and Exceptions](#chapter-10-files-and-exceptions)
-* [Chapter 11: Testing Your Code](#chapter-11-testing-your-code)
+
+2. Chapter 2: Variables and Simple Data Types  
+3. Chapter 3: Introducing Lists  
+4. Chapter 4: Working with Lists  
+5. Chapter 5: If Statements  
+6. Chapter 6: Dictionaries  
+7. Chapter 7: User Input and While Loops  
+8. Chapter 8: Functions  
+9. Chapter 9: Classes  
+10. Chapter 10: Files and Exceptions  
+11. Chapter 11: Testing Your Code
 
 ---
 
-** Chapter 2: Variables and Simple Data Types
-* Variables store data values.
-* Basic types: int, float, str, bool.
-* Example:
-age = 25
-name = "Alice"
-height = 5.7
-is_student = True
+## **Chapter 2: Variables and Simple Data Types**
 
-** Chapter 3: Introducing Lists
-* Lists store multiple items.
-* Use [] to create a list.
-fruits = ["apple", "banana", "cherry"]
+* Variables store values like numbers, text, etc.  
+* Use `=` to assign a value.  
+* Common types: integers, floats, strings, booleans.  
+* Operations include arithmetic, string concatenation, and boolean logic.  
+* Constants: conventionally written in uppercase.  
 
-** Chapter 4: Working with Lists
-* Access items by index: fruits[0]
-* Modify, add (append), remove (del/pop)
-* Loop through lists with for
-for fruit in fruits:
-    print(fruit)
+---
 
-** Chapter 5: If Statements
-* Conditional logic: if, elif, else
-if age >= 18:
-    print("Adult")
-else:
-    print("Minor")
+## **Chapter 3: Introducing Lists**
 
-** Chapter 6: Dictionaries
-* Store key-value pairs: {key: value}
-* Access: dict[key], add/update: dict[new_key] = value
-person = {"name": "Alice", "age": 25}
-print(person["name"])
+* Lists store multiple items in a single variable.  
+* Defined with square brackets `[]`.  
+* Items can be of different types.  
+* Access with index (starting at 0).  
+* Basic operations: append, insert, remove, pop, sort, reverse.  
 
-** Chapter 7: User Input and While Loops
-* input() to get user input
-* while loops repeat until condition is False
-while True:
-    msg = input("Enter message (q to quit): ")
-    if msg == 'q':
-        break
-    print(msg)
+---
 
-** Chapter 8: Functions
-* Reusable blocks of code with def
-* Can return values
-def greet(name):
-    return f"Hello, {name}!"
+## **Chapter 4: Working with Lists**
 
-** Chapter 9: Classes
-* Classes define objects with attributes and methods
-* __init__() initializes objects
-class Dog:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-    def sit(self):
-        print(f"{self.name} is sitting.")
+* Looping through lists using `for`.  
+* List comprehensions for compact code.  
+* Slicing allows accessing portions of a list.  
+* Copying lists requires slicing (`[:]`) to avoid reference issues.  
+* Useful functions: `len()`, `min()`, `max()`, `sum()`.  
 
-** Chapter 10: Files and Exceptions
-* Read/write files using open() with modes: 'r', 'w', 'a', 'r+'
-* Handle errors with try/except
-* Use with for safe file handling
-with open("data.txt", "r") as file:
-    content = file.read()
+---
 
-** Chapter 11: Testing Your Code
-* Purpose: Ensure code works, catch errors early, allow safe changes
-* Unit Tests: Verify a specific function’s behavior
-* Test Case: Collection of unit tests
-import unittest
-from name_function import get_formatted_name
+## **Chapter 5: If Statements**
 
-class NamesTestCase(unittest.TestCase):
-    def test_first_last_name(self):
-        formatted_name = get_formatted_name('janis', 'joplin')
-        self.assertEqual(formatted_name, 'Janis Joplin')
+* Conditional logic controls program flow.  
+* Keywords: `if`, `elif`, `else`.  
+* Comparisons: `==`, `!=`, `<`, `>`, `<=`, `>=`.  
+* Logical operators: `and`, `or`, `not`.  
+* Nesting and combining conditions for complex logic.  
 
-if __name__ == '__main__':
-    unittest.main()
+---
 
-* Assert Methods: assertEqual, assertTrue, assertIn, assertFalse, etc.
-* Failing Tests: Don’t change the test; fix the code
-* Optional Parameters Example:
-def get_formatted_name(first, last, middle=''):
-    if middle:
-        full_name = f"{first} {middle} {last}"
-    else:
-        full_name = f"{first} {last}"
-    return full_name.title()
+## **Chapter 6: Dictionaries**
 
-* Testing Classes: Test methods and object behavior. Use setUp() for reusable objects
-class AnonymousSurvey:
-    def __init__(self, question):
-        self.question = question
-        self.responses = []
-    def store_response(self, new_response):
-        self.responses.append(new_response)
+* Store key-value pairs for fast lookup.  
+* Defined with `{key: value}`.  
+* Access, add, modify, and remove items.  
+* Useful methods: `keys()`, `values()`, `items()`.  
+* Loop through dictionary for processing data.  
 
-import unittest
-from survey import AnonymousSurvey
+---
 
-class TestAnonymousSurvey(unittest.TestCase):
-    def setUp(self):
-        self.my_survey = AnonymousSurvey("What language did you first learn?")
-        self.responses = ['English', 'Spanish', 'Mandarin']
+## **Chapter 7: User Input and While Loops**
 
-    def test_store_single_response(self):
-        self.my_survey.store_response(self.responses[0])
-        self.assertIn('English', self.my_survey.responses)
+* `input()` reads input from the user.  
+* Convert input to needed types (int, float, etc.).  
+* `while` loops run until a condition is false.  
+* Use `break` to exit early and `continue` to skip an iteration.  
+* Useful for menus and repetitive prompts.  
 
-    def test_store_three_responses(self):
-        for r in self.responses:
-            self.my_survey.store_response(r)
-        for r in self.responses:
-            self.assertIn(r, self.my_survey.responses)
+---
 
-* Benefits: Confidence in code, prevents breaking functionality, easier collaboration
+## **Chapter 8: Functions**
+
+* Functions encapsulate reusable logic.  
+* Defined with `def function_name(parameters):`.  
+* Return values with `return`.  
+* Can have default, keyword, and arbitrary parameters.  
+* Helps reduce code duplication and improves readability.  
+
+---
+
+## **Chapter 9: Classes**
+
+* Classes represent objects with attributes and methods.  
+* Defined with `class ClassName:`.  
+* `__init__()` method initializes attributes.  
+* Methods define behavior of the object.  
+* Instances are created by calling the class.  
+* Example usage: modeling real-world entities, organizing code.  
+
+---
+
+## **Chapter 10: Files and Exceptions**
+
+* Files allow reading and writing data.  
+* Open with `open(filename, mode)` and close with `close()` or use `with`.  
+* Modes: `'r'` read, `'w'` write, `'a'` append.  
+* Exception handling with `try-except` to prevent crashes.  
+* Common exceptions: `FileNotFoundError`, `ZeroDivisionError`.  
+* Helps programs handle errors gracefully.  
+
+---
+
+## **Chapter 11: Testing Your Code**
+
+* Testing ensures code works as expected.  
+* Use Python’s `unittest` module for automated tests.  
+* **Unit tests** check one behavior; **Test cases** group multiple unit tests.  
+* Use assert methods: `assertEqual`, `assertTrue`, `assertIn`, etc.  
+* Failing tests indicate broken behavior—fix the code, not the test.  
+* Optional parameters make functions flexible and maintain backward compatibility.  
+* **Classes can be tested** like functions by checking method behavior.  
+* Use `setUp()` in test cases to avoid repetitive setup.  
+* Testing improves confidence, prevents bugs, and supports collaboration.  
+
+---
+
+**Best Practices**
+
+* Test critical behaviors first.  
+* Do not modify passing tests just to make new code work.  
+* Always test after changes.  
+* Keep tests clear, descriptive, and focused on one behavior.  
+* Automated testing becomes essential as projects grow.  
