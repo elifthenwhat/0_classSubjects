@@ -2,6 +2,10 @@
 
 Hello! 👋 These are my lecture notes from **Python Crash Course** by **Eric Matthes**.  
 
+IMPORTANT NOTE: 
+1) The actual notes are saved as a WORD document, so you need to view raw (which will download and you can open the WORD document)
+2) The actual examples are saved as a .py file, so you need to view raw (which will download and you can open with VScode)
+
 The goal of these notes is to:  
 - Keep Python concepts organized and easy to reference  
 - Provide a single resource for learning and reviewing Python fundamentals  
