@@ -1,0 +1,1 @@
+/usr/bin/python3 /Users/toeside.funside/Desktop/0_classSubjects/pythonCrashCourse/chapter10/TIYchapter10.py

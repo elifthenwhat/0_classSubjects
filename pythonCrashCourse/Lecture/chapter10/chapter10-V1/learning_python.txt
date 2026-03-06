@@ -1,0 +1,4 @@
+In python you can assign values to different variables
+In python you can use logic to determine an output using if elif and else statements
+In python you can run a programming over and over without the need of retyping each program
+In python you can create classes that make building objects easier

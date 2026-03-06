@@ -1,0 +1,25 @@
+johnEnter quit to exit.
+Please enter your name: David
+Johnny
+Cara
+dave
+    with open("cats.txt") as cat_object:
+        cat_names = cat_object.readlines()
+        for i in cat_names:
+            print()
+except FileNotFoundError:
+    print("That file does not exist in the current directory.")
+
+try:
+    with open("cats.txt") as cat_object:
+        cat_names = cat_object.readlines()
+        print("The following names in the cat file are: ")
+        for i in cat_names:
+            print(f)
+except FileNotFoundError:
+    print("That file does not exist in the current directory.")
+
+/usr/bin/python3 /Users/toeside.funside/Desktop/0_classSubjects/pythonCrashCourse/chapter10/TIYchapter10.py
+Mike
+John
+Dave
