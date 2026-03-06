@@ -1,7 +1,5 @@
 # Python Crash Course Notes
 
-# Python Crash Course Notes
-
 Hello! 👋 These are my lecture notes from **Python Crash Course** by **Eric Matthes**.  
 
 The goal of these notes is to:  
